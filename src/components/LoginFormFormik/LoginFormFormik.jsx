@@ -6,7 +6,7 @@ import { Field, Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  login: yup.string().required(),
+  login: yup.string.required(),
   password: yup.string.min(6).max(16).required(),
 });
 
