@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/practic-form-nostate/static/css/main.7acaea2f.css",
-    "main.js": "/practic-form-nostate/static/js/main.a66a3873.js",
+    "main.js": "/practic-form-nostate/static/js/main.2f02c5b4.js",
     "index.html": "/practic-form-nostate/index.html",
     "main.7acaea2f.css.map": "/practic-form-nostate/static/css/main.7acaea2f.css.map",
-    "main.a66a3873.js.map": "/practic-form-nostate/static/js/main.a66a3873.js.map"
+    "main.2f02c5b4.js.map": "/practic-form-nostate/static/js/main.2f02c5b4.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.a66a3873.js"
+    "static/js/main.2f02c5b4.js"
   ]
 }
