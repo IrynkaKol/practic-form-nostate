@@ -1,17 +1,23 @@
 import React from 'react';
-import { Field, Formik, Form } from 'formik';
+import { Field, Formik, Form, ErrorMessage } from 'formik';
 //import { Input } from './LoginFormFormil.styled';
-import {Input} from '@emotion/react'
+//import styled from '@emotion/styled'
+//import styled from 'styled-components';
+import * as yup from 'yup';
+
+const schema = yup.object().shape({
+  login: yup.string.required(),
+  password: yup.string.min(6).max(16).required(),
+});
 
 const initialValues = {
-  login: '',
-  password: '',
+  login: "",
+  password: "",
 }; // передаем prop initialValues
 
-const Input = styled.Field`
-font-size: 80px;
-color: red;
-`
+/*const Input = styled(Field)`
+  color: #2a2a2a;
+`;*/
 
 export const LoginFormFormik = () => {
   const hendleSubmit = (values, { resetForm }) => {
@@ -21,15 +27,21 @@ export const LoginFormFormik = () => {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={hendleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={schema}
+      onSubmit={hendleSubmit}
+    >
       <Form autoComplete="off">
         <label htmlFor="login">
           Login
-          <Input type="text" name="login" />
+          <Field type="text" name="login" />
+          <ErrorMessage name="login"/>
         </label>
         <label htmlFor="password">
           Password
           <Field type="password" name="password" />
+          <ErrorMessage name="password"/>
         </label>
         <button type="submit">Submit</button>
       </Form>
