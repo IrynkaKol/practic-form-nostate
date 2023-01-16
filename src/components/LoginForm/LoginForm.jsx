@@ -2,9 +2,12 @@ import React from 'react';
 
 export const LoginForm = () => {
     const handleSubmit = e => {
-        e.preventDefaulte();
-        console.log(e.target)
-    }
+        e.preventDefault();
+        const {login, password} = e.target.elements;
+        console.log(e.target.elements.login)
+        console.log(login.value, password.value)
+    };
+
   return (
     <form autoComplete="off" onSubmit={handleSubmit}>
       <label htmlFor="login">
