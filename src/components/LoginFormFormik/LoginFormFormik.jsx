@@ -6,8 +6,8 @@ import { Field, Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  login: yup.string.required(),
-  password: yup.string.min(6).max(16).required(),
+  login: yup.string().required(),
+  password: yup.string().min(6).max(16).required(),
 });
 
 const initialValues = {
@@ -36,12 +36,12 @@ export const LoginFormFormik = () => {
         <label htmlFor="login">
           Login
           <Field type="text" name="login" />
-          <ErrorMessage name="login" />
+          <ErrorMessage component="div" name="login" />
         </label>
         <label htmlFor="password">
           Password
           <Field type="password" name="password" />
-          <ErrorMessage name="password" />
+          <ErrorMessage component="div" name="password" />
         </label>
         <button type="submit">Submit</button>
       </Form>
